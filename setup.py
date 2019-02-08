@@ -31,7 +31,9 @@ setup(
     install_requires=[
         'requests',
         'furl',
-        'python-semantic-release==4.1.0'
+    ],
+    test_requires=[
+        'nose', 'nose.cover3',
     ],
     include_package_data=True,
     classifiers=[
@@ -49,9 +51,3 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
 )
-
-try:
-    from semantic_release import setup_hook
-    setup_hook(sys.argv)
-except ImportError:
-    pass
