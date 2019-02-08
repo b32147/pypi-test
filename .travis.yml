@@ -1,0 +1,14 @@
+jobs:
+  include:
+    - stage: "Release"                # naming the Tests stage
+      name: "Semantic Release"            # names the first Tests stage job
+      script: semantic-release release
+deploy:
+  provider: pypi
+  user: blhmsdbmi
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  password:
+    secure: Tx0f3A3i1XF2XxaDwGMDc0hm0MIBvq7eBHeZ8C3d3XWEtIO+xJlaXXTXcn9BJufmkvsjNaITJ+yxdFPw1XJJavgmVIIPdSSpP8ulZjn/+EVDgjM8GwIxUcckY045ulBvuRQ1L8GBxySPOoiWCbHRskNhGyVjVVLMOPMC+W0vWn0XZwpPiPwxJ01rMUwpLBghhhevTVTKI/waoQIOcnKyAJiVLFtvDmCpZVeDxHyCaOYEWMzH28SCvdNYxsf/hShapZb0zbf9+bWQLPA7p66c44aqpKL8RYb17Q9UWuldu9hlHiURo6IqcByw7jhbHOMX+HJONRamGFRjEAOUZf/KOo4OiGHkJRKHPthIPNjaGKpsvxQ+9KGY3GHXQts7TSrvjrodbAjtGI3NN7wsPIHQFjfLDbBucmb/8lyqDz8P2v6IkFxlm9WVeKSvzq/DUwv2aDWkX6D02o3vuG7nw5WXAba7UBnpGzJwgLa3Jrw/JghJ895oEVW5J7/yZjOZ0SaIDnGb1wF3XXSjYb00bWYp6cXxyvqtX1QyVhcngR8MoPdFvyhxZ4sd4XBsQjh1GFA6GePKV+ZcuirzAgjxRTjNN4dMbkxASrwy+UNESUHp2nM0eStNRQm0jYtskwG+qR4FF8bbV0ZW0wBrYIpny70ExNxYJDkj69BeRuNueKVpIT4=
+  on:
+    branch: master
