@@ -32,6 +32,9 @@ setup(
         'requests',
         'furl',
     ],
+    test_requires=[
+        'nose', 'nose.cover3',
+    ],
     include_package_data=True,
     classifiers=[
         'Environment :: Web Environment',
